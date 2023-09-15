@@ -21,7 +21,23 @@
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
+function create_custom_block_category($categories) {
+	 array_unshift(
+		$categories,
+			array(
+				'slug' => 'cosmicblocks',
+				'title' => __( 'Cosmic Blocks', 'cosmicblocks' ),
+				'icon'  => 'welcome-widgets-menus'
+			),
+		
+	);
+
+	return $categories;
+	
+}
+
 function create_block_cosmicblocks_block_init() {
+	add_filter('block_categories_all', 'create_custom_block_category');
 	register_block_type( __DIR__ . '/build/blocks/curvy' );
 }
 add_action( 'init', 'create_block_cosmicblocks_block_init' );

@@ -4,10 +4,9 @@
 	"name": "cosmicblocks/curvy",
 	"version": "0.1.0",
 	"title": "Curvy",
-	"category": "widgets",
+	"category": "cosmicblocks",
 	"icon": "smiley",
 	"description": "Curvy Shape that Divide page sections in a cool way",
-	"example": {},
 	"supports": {
 		"html": false,
 		"color": {
@@ -18,6 +17,42 @@
 		"spacing": {
 			"padding": true
 		}
+	},
+	"variations": [
+		{
+			"name": "top-only",
+			"title": "Curvy - Top Only",
+			"attributes": {
+				"enableTopCurve": true,
+				"enableBottomCurve": false
+			}
+		},
+		{
+			"name": "bottom-only",
+			"title": "Curvy - Bottom Only",
+			"attributes": {
+				"enableTopCurve": false,
+				"enableBottomCurve": true
+			}
+		}
+	
+	],
+	"example" : {
+		"innerBlocks": [
+			{
+				"name": "core/heading",
+				"attributes": {
+					"content": "Hello World"
+				}
+			},
+			{
+				"name": "core/paragraph",
+				"attributes": {
+					"content": "Some content here"
+				}
+			}
+		]
+		
 	},
 	"attributes": {
 		"enableTopCurve": {
