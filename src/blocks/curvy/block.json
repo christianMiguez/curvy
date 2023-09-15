@@ -24,6 +24,10 @@
 			"type": "boolean",
 			"default": true
 		},
+		"enableBottomCurve": {
+			"type": "boolean",
+			"default": true
+		},
 		"flipHorizontally" : {
 			"type": "boolean",
 			"default": false
@@ -40,6 +44,31 @@
 		"topHeight" : {
 			"type": "number",
 			"default": 100
+		},
+		"topColor" : {
+			"type": "string",
+			"default": "#FFFFFF"
+		},
+		"bottomFlipHorizontally" : {
+			"type": "boolean",
+			"default": false
+		},
+		"bottomFlipVertically" : {
+			"type": "boolean",
+			"default": false
+		
+		},
+		"bottomWidth" : {
+			"type": "number",
+			"default": 100
+		},
+		"bottomHeight" : {
+			"type": "number",
+			"default": 100
+		},
+		"bottomColor" : {
+			"type": "string",
+			"default": "#FFFFFF"
 		},
 		"style": {
 			"type": "object",

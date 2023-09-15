@@ -7,14 +7,15 @@ export const Curve = (props) => {
 		<div
 			style={{
 				position: "absolute",
-				top: 0,
+				top: props.isBottom ? "initial" : 0,
+				bottom: props.isBottom ? 0 : "initial",
 				left: 0,
 				width: "100%",
 				overflow: "hidden",
 				height: props.height, // "100px",
 				transform: `scaleX(${props.flipHorizontally ? -1 : 1}) rotate(${
 					props.flipVertically ? 180 : 0
-				}deg)`,
+				}deg) scaleY(${props.isBottom ? -1 : 1})`,
 			}}
 		>
 			<svg
@@ -29,7 +30,7 @@ export const Curve = (props) => {
 				}}
 			>
 				<path
-					style={{ fill: "white" }}
+					style={{ fill: props.color || "#fff" }}
 					d={props.flipVertically ? invertedPath : normalPath}
 				/>
 			</svg>
