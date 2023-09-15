@@ -1,14 +1,15 @@
 <?php
 /**
- * Plugin Name:       Curvy
- * Description:       Example block scaffolded with Create Block tool.
+ * Plugin Name:       CosmicBlocks
+ * Description:       Set of blocks.
  * Requires at least: 6.1
  * Requires PHP:      7.0
  * Version:           0.1.0
- * Author:            The WordPress Contributors
+ * Author:            Christian Miguez
+ * Author URI:        https://christianmiguez.com
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       curvy
+ * Text Domain:       cosmicblocks
  *
  * @package           create-block
  */
@@ -20,7 +21,7 @@
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function create_block_curvy_block_init() {
-	register_block_type( __DIR__ . '/build' );
+function create_block_cosmicblocks_block_init() {
+	register_block_type( __DIR__ . '/build/blocks/curvy' );
 }
-add_action( 'init', 'create_block_curvy_block_init' );
+add_action( 'init', 'create_block_cosmicblocks_block_init' );
