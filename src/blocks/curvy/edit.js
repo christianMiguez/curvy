@@ -11,7 +11,11 @@ import { __ } from "@wordpress/i18n";
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
+import {
+	useBlockProps,
+	InspectorControls,
+	InnerBlocks,
+} from "@wordpress/block-editor";
 import { ToggleControl, PanelBody } from "@wordpress/components";
 
 /**
@@ -53,6 +57,7 @@ export default function Edit(props) {
 						color={props.attributes.topColor}
 					/>
 				)}
+				<InnerBlocks />
 				{props.attributes.enableBottomCurve && (
 					<Curve
 						height={props.attributes.bottomHeight}

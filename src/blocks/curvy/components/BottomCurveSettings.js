@@ -63,6 +63,7 @@ export const BottomCurveSettings = (props) => {
 					{ name: "White smoke", color: "#f6f4f3" },
 					{ name: "Celtic blue", color: "#276fbf" },
 					{ name: "Delft Blue", color: "#183059" },
+					{ name: "white", color: "#ffffff" },
 				]}
 				value={props.attributes.bottomColor}
 				onChange={(color) => {

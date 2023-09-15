@@ -7,4 +7,29 @@
 
 .wp-block-cosmicblocks-curvy {
 	position: relative;
+
+	// // therie is a bug in Gutenberg so we need to add default styles from block.json
+	background: #0384ad;
+	padding: 100px 50px;
+
+	.curve {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		overflow: hidden;
+
+		&.top-curve {
+			top: 0;
+		}
+
+		&.bottom-curve {
+			bottom: 0;
+		}
+
+		svg {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
 }
