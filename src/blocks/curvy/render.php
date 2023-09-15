@@ -15,19 +15,23 @@
          $bottom_transform = "scaleY(-1) scaleX(" . ($attributes['bottomFlipHorizontally'] ? "-1" : "1")  . ") " . "rotate(" . ( $attributes['bottomFlipVertically'] ? "180deg" : "0" ) . ")";
 ?>
 <div <?php echo $block_wrapper_attributes; ?>>
-    <div class="curve top-curve" style="transform: <?php echo $top_transform; ?>; height:<?php echo $attributes['topHeight']; ?>px;">
+    <?php if($attributes['enableTopCurve']) : ?>
+        <div class="curve top-curve" style="transform: <?php echo $top_transform; ?>; height:<?php echo $attributes['topHeight']; ?>px;">
          <svg preserveAspectRatio="none" viewBox="0 0 1200 120" style="height: <?php echo $attributes['topHeight']; ?>px; width: <?php echo $attributes['topWidth']; ?>%;">
             <path fill="<?php echo $attributes['topColor'] ?? 'white'; ?>" d="<?php echo $attributes['flipHorizontally'] ? $inverted_path : $normal_path; ?>">
 
             </path>
         </svg>
     </div>
+    <?php endif; ?>
     <?php  echo $content; // comes from wp   ?>
-   <div class="curve bottom-curve" style="transform: <?php echo $bottom_transform; ?>; height:<?php echo $attributes['bottomHeight']; ?>px;">
+   <?php if ($attributes['enableBottomCurve']) : ?>
+    <div class="curve bottom-curve" style="transform: <?php echo $bottom_transform; ?>; height:<?php echo $attributes['bottomHeight']; ?>px;">
          <svg preserveAspectRatio="none" viewBox="0 0 1200 120" style="height: <?php echo $attributes['bottomHeight']; ?>px; width: <?php echo $attributes['bottomWidth']; ?>%;">
             <path fill="<?php echo $attributes['bottomColor'] ?? 'white'; ?>" d="<?php echo $attributes['bottomFlipHorizontally'] ? $inverted_path : $normal_path; ?>">
 
             </path>
         </svg>
     </div>
+    <?php endif; ?>
 </div>
