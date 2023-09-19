@@ -70,11 +70,11 @@ export default function Edit(props) {
 				)}
 			</section>
 
-			<p>
+			{/* <p>
 				{props.attributes.enableTopCurve
 					? "Top curve is enabled"
 					: "Top curve is disabled"}
-			</p>
+			</p> */}
 			<InspectorControls>
 				<PanelBody title={__("Top Curve", metadata.textdomain)}>
 					<div style={{ display: "flex" }}>

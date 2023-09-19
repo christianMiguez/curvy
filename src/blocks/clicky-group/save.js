@@ -1,3 +1,8 @@
-export default function save() {
-	return <div>ClickyBUttons from save</div>;
+import { useBlockProps, useInnerBlocksProps } from "@wordpress/block-editor";
+
+export default function Save() {
+	const blockProps = useBlockProps.save();
+	const innerBlockProps = useInnerBlocksProps.save(blockProps);
+
+	return innerBlockProps.children;
 }
