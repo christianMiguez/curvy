@@ -8,9 +8,41 @@
 	"icon": "smiley",
 	"description": "Clicky Button",
 	"supports": {
-		"html": false
+		"html": false,
+		"color": {
+			"background": true,
+			"text": true,
+			"link": false,
+			"gradients": true,
+			"enableContrastChecker": true
+		},
+		"spacing": {
+			"padding": true
+		}
 	},
-	
+	"attributes": {
+		"style": {
+			"type": "object",
+			"default":  {
+				"color": {
+					"background":"#000000",
+					"text":"#ffffff"
+				},
+				"spacing": {
+					"padding": {
+						"right": "15px",
+						"left": "15px",
+						"bottom": "15px",
+						"top": "15px"
+					}
+				}
+			}
+		},
+		"labelText": {
+			"type": "string",
+			"default": ""
+		}
+	},
 	"textdomain": "cosmicblocks",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",

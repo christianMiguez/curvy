@@ -8,9 +8,22 @@
 	"icon": "smiley",
 	"description": "Clicky Group ",
 	"supports": {
-		"html": false
+		"html": false,
+		"spacing" : {
+			"blockGap": true
+		}
 	},
-	
+	"attributes": {
+		"justifyContent" : {
+			"type": "string",
+			"default": "left",
+			"enum": [
+				"left",
+				"center",
+				"right"
+			]
+		}
+	},
 	"textdomain": "cosmicblocks",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",

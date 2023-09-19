@@ -1,11 +1,37 @@
-import { useBlockProps, useInnerBlocksProps } from "@wordpress/block-editor";
+import {
+	useBlockProps,
+	useInnerBlocksProps,
+	BlockControls,
+	JustifyContentControl,
+} from "@wordpress/block-editor";
+import { parseValue } from "../../../utils/parseValue";
 import "./editor.scss";
 
-export default function Edit() {
-	const blockProps = useBlockProps();
+export default function Edit(props) {
+	console.log({ props });
+	const blockGap = parseValue(props.attributes.style?.spacing?.blockGap || "");
+	const blockProps = useBlockProps({
+		style: {
+			gap: blockGap,
+			justifyContent: props.attributes.justifyContent,
+		},
+	});
 	const innerBlockProps = useInnerBlocksProps(blockProps, {
 		template: [["cosmicblocks/clicky-button", {}]],
 		allowedBlocks: ["cosmicblocks/clicky-button"],
 	});
-	return <div {...innerBlockProps} />;
+	return (
+		<>
+			<BlockControls>
+				<JustifyContentControl
+					value={props.attributes.justifyContent}
+					allowedControls={["left", "center", "right"]}
+					onChange={(newValue) =>
+						props.setAttributes({ justifyContent: newValue })
+					}
+				/>
+			</BlockControls>
+			<div {...innerBlockProps} />
+		</>
+	);
 }
