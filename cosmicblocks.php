@@ -39,5 +39,7 @@ function create_custom_block_category($categories) {
 function create_block_cosmicblocks_block_init() {
 	add_filter('block_categories_all', 'create_custom_block_category');
 	register_block_type( __DIR__ . '/build/blocks/curvy' );
+	register_block_type( __DIR__ . '/build/blocks/clicky-group' );
+
 }
 add_action( 'init', 'create_block_cosmicblocks_block_init' );

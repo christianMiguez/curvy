@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "cosmicblocks/clicky-group",
+	"version": "0.1.0",
+	"title": "Clicky Group",
+	"category": "cosmicblocks",
+	"icon": "smiley",
+	"description": "Clicky Group for buttons",
+	"supports": {
+		"html": false
+	},
+	
+	"textdomain": "cosmicblocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js",
+	"render": "file:./render.php"
+}
