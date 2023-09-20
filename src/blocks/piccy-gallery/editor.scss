@@ -1,0 +1,18 @@
+.wp-block-cosmicblocks-piccy-gallery {
+	.edit-mode {
+		padding: 30px;
+		background: #eee;
+		position: relative;
+		box-sizing: border-box;
+
+		.piccy-label {
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: inline-block;
+			padding: 5px 10px;
+			background: #04647c;
+			color: #fff;
+		}
+	}
+}
