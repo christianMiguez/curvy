@@ -50,6 +50,8 @@ final class SpaceBlocks {
 			register_block_type( __DIR__ . '/build/blocks/curvy' );
 			register_block_type( __DIR__ . '/build/blocks/clicky-group' );
 			register_block_type( __DIR__ . '/build/blocks/clicky-button' );
+			register_block_type( __DIR__ . '/build/blocks/piccy-gallery' );
+
 		});
 	}
 	static function convert_custom_properties($value) {

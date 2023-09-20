@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "cosmicblocks/piccy-gallery",
+	"version": "0.1.0",
+	"title": "Piccy Gallery",
+	"category": "cosmicblocks",
+	"icon": "images-alt2",
+	"description": "Gallery for CosmicBlocks",
+	"supports": {
+		"html": false
+		
+	},
+	
+	"textdomain": "cosmicblocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js",
+	"render": "file:./render.php"
+}
