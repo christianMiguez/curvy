@@ -21,26 +21,53 @@
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function create_custom_block_category($categories) {
-	 array_unshift(
-		$categories,
-			array(
-				'slug' => 'cosmicblocks',
-				'title' => __( 'Cosmic Blocks', 'cosmicblocks' ),
-				'icon'  => 'welcome-widgets-menus'
-			),
-		
-	);
 
-	return $categories;
-	
+
+namespace Cosmic;
+
+// the following ABSPATH check is required to prevent direct access to the plugin
+ if ( ! defined( 'ABSPATH' ) ) {
+	die('Silence is golden'); // Exit if accessed directly.
 }
 
-function create_block_cosmicblocks_block_init() {
-	add_filter('block_categories_all', 'create_custom_block_category');
-	register_block_type( __DIR__ . '/build/blocks/curvy' );
-	register_block_type( __DIR__ . '/build/blocks/clicky-group' );
-	register_block_type( __DIR__ . '/build/blocks/clicky-button' );
 
+final class SpaceBlocks {
+	static function init() {
+		add_action( 'init', function()  {
+			add_filter('block_categories_all', function($categories){
+				 array_unshift(
+					$categories,
+						array(
+							'slug' => 'cosmicblocks',
+							'title' => __( 'Cosmic Blocks', 'cosmicblocks' ),
+							'icon'  => 'welcome-widgets-menus'
+						),
+					
+				);
+
+				return $categories;
+			});
+			register_block_type( __DIR__ . '/build/blocks/curvy' );
+			register_block_type( __DIR__ . '/build/blocks/clicky-group' );
+			register_block_type( __DIR__ . '/build/blocks/clicky-button' );
+		});
+	}
+	static function convert_custom_properties($value) {
+		$prefix     = 'var:';
+		$prefix_len = strlen($prefix);
+		$token_in   = '|';
+		$token_out  = '--';
+		if (str_starts_with($value, $prefix)) {
+			$unwrapped_name = str_replace(
+				$token_in,
+				$token_out,
+				substr($value, $prefix_len)
+			);
+			$value          = "var(--wp--$unwrapped_name)";
+		}
+
+		return $value;
+	}
 }
-add_action( 'init', 'create_block_cosmicblocks_block_init' );
+
+SpaceBlocks::init();

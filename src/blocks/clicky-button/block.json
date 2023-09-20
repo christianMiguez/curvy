@@ -21,6 +21,13 @@
 		}
 	},
 	"attributes": {
+		"postType": {
+			"type": "string",
+			"default": ""
+		},
+		"linkedPost": {
+			"type":"number"
+		},
 		"style": {
 			"type": "object",
 			"default":  {
