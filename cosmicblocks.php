@@ -51,6 +51,8 @@ final class SpaceBlocks {
 			register_block_type( __DIR__ . '/build/blocks/clicky-group' );
 			register_block_type( __DIR__ . '/build/blocks/clicky-button' );
 			register_block_type( __DIR__ . '/build/blocks/piccy-gallery' );
+			register_block_type( __DIR__ . '/build/blocks/piccy-image' );
+
 
 		});
 	}

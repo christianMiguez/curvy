@@ -1,7 +1,7 @@
 import {
 	useBlockProps,
 	BlockControls,
-	InnerBlocks,
+	useInnerBlocksProps,
 } from "@wordpress/block-editor";
 import { ToolbarGroup, ToolbarButton } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
@@ -11,6 +11,12 @@ import "./editor.scss";
 
 export default function Edit(props) {
 	const blockProps = useBlockProps();
+	const innerBlocksProps = useInnerBlocksProps(
+		{
+			className: "piccy-gallery-inner-blocks",
+		},
+		{ allowedBlocks: ["cosmicblocks/piccy-image"] }
+	);
 	const [editMode, setEditMode] = useState(true);
 
 	return (
@@ -21,7 +27,7 @@ export default function Edit(props) {
 						<span className="piccy-label">
 							{__("Edit Mode", metadata.textdomain)}
 						</span>
-						<InnerBlocks />
+						<div {...innerBlocksProps} />
 					</div>
 				)}
 				{!editMode && <div>edit mode</div>}

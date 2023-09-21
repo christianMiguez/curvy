@@ -1,6 +1,6 @@
 .wp-block-cosmicblocks-piccy-gallery {
 	.edit-mode {
-		padding: 30px;
+		padding: 50px;
 		background: #eee;
 		position: relative;
 		box-sizing: border-box;
@@ -13,6 +13,12 @@
 			padding: 5px 10px;
 			background: #04647c;
 			color: #fff;
+		}
+
+		.piccy-gallery-inner-blocks {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 10px;
 		}
 	}
 }
