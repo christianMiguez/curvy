@@ -6,38 +6,21 @@ import {
 import { __ } from "@wordpress/i18n";
 import metadata from "./block.json";
 
-import { useSelect } from "@wordpress/data";
 import { Icon } from "@wordpress/components";
 import "./editor.scss";
+import { ImageThumbnail } from "../../components/imageThumbnail";
+import { useImage } from "../../hooks/useImage";
 
 export default function Edit(props) {
 	const blockProps = useBlockProps();
-	const image = useSelect(
-		(select) => {
-			const data = select("core").getEntityRecord(
-				"postType",
-				"attachment",
-				props.attributes.imageId
-			);
-			return data;
-		},
-		[props.attributes.imageId]
-	);
+	const image = useImage(props.attributes.imageId);
 
 	const isImageSelected = !!props.attributes.imageId && !!image?.source_url;
 
 	return (
 		<div {...blockProps}>
-			{isImageSelected && (
-				<img
-					src={image.source_url}
-					style={{
-						height: 150,
-						width: "100%",
-						objectFit: "cover",
-						display: "block",
-					}}
-				/>
+			{!!isImageSelected && (
+				<ImageThumbnail imageId={props.attributes.imageId} />
 			)}
 
 			{!isImageSelected && (
