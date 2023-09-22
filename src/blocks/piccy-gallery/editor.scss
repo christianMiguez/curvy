@@ -1,4 +1,9 @@
 .wp-block-cosmicblocks-piccy-gallery {
+	.preview-mode {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		gap: 20px;
+	}
 	.edit-mode {
 		padding: 50px;
 		background: #eee;

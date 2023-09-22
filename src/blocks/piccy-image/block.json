@@ -5,7 +5,7 @@
 	"version": "0.1.0",
 	"title": "Piccy Image",
 	"category": "cosmicblocks",
-	"icon": "images",
+	"icon": "format-image",
 	"description": "Image for Piccy Gallery",
 	"supports": {
 		"html": false
